@@ -8,12 +8,20 @@ import javax.activation.MimeType;
 public class ZalacznikiDTO extends IDDTO{
 
     private ZgloszeniaDTO idZgloszenia;
+    private UserDTO uzytkownik;
     private String nazwa;
     private String nazwaPliku;
     private MimeType mimetype;
-    private BinariaDTO binaria;
+    private int idbinaria;
 
 
+    public UserDTO getUzytkownik() {
+        return uzytkownik;
+    }
+
+    public void setUzytkownik(UserDTO uzytkownik) {
+        this.uzytkownik = uzytkownik;
+    }
 
     public ZgloszeniaDTO getIdZgloszenia() {
         return idZgloszenia;
@@ -47,20 +55,22 @@ public class ZalacznikiDTO extends IDDTO{
         this.mimetype = mimetype;
     }
 
-    public BinariaDTO getBinaria() {
-        return binaria;
+    public int getIdbinaria() {
+        return idbinaria;
     }
 
-    public void setBinaria(BinariaDTO binaria) {
-        this.binaria = binaria;
+    public void setIdbinaria(int idbinaria) {
+        this.idbinaria = idbinaria;
     }
 
-    public ZalacznikiDTO(int id, ZgloszeniaDTO idZ, String nazwa, String nazwaPliku, MimeType mim, BinariaDTO binaria) {
+    public ZalacznikiDTO(int id, UserDTO uzytkownik, ZgloszeniaDTO idZ, String nazwa, String nazwaPliku, MimeType mim, int binaria) {
         super(id);
+        this.uzytkownik=uzytkownik;
         this.idZgloszenia=idZ;
         this.nazwa=nazwa;
         this.nazwaPliku=nazwaPliku;
         this.mimetype=mim;
-        this.binaria=binaria;
+        this.idbinaria=binaria;
+
     }
 }

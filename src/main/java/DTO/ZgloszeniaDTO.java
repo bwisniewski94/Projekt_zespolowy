@@ -8,11 +8,19 @@ import java.util.List;
 public class ZgloszeniaDTO extends IDDTO{
 
     private String opis;
-    private PriorytetDTO priorytet;
+    private Typ rodzajZgloszenia;
+    private TypZgloszenia typ;
     private ProjektyDTO projekt;
     private List<HistoriaDTO> historia;
     private List<ZalacznikiDTO> zalaczniki;
 
+    public TypZgloszenia getTyp() {
+        return typ;
+    }
+
+    public void setTyp(TypZgloszenia typ) {
+        this.typ = typ;
+    }
 
     public String getOpis() {
         return opis;
@@ -22,13 +30,7 @@ public class ZgloszeniaDTO extends IDDTO{
         this.opis = opis;
     }
 
-    public PriorytetDTO getPriorytet() {
-        return priorytet;
-    }
 
-    public void setPriorytet(PriorytetDTO priorytet) {
-        this.priorytet = priorytet;
-    }
 
     public ProjektyDTO getProjekt() {
         return projekt;
@@ -50,14 +52,25 @@ public class ZgloszeniaDTO extends IDDTO{
         return zalaczniki;
     }
 
-    public void setZalaczniki(List<ZalacznikiDTO> zalaczniki) {
+    public void setZalaczniki(List<ZalacznikiDTO> zalaczniki)
+    {
         this.zalaczniki = zalaczniki;
     }
 
-    public ZgloszeniaDTO(int id, String opis,ProjektyDTO projekt,PriorytetDTO prio, List<HistoriaDTO> historia, List<ZalacznikiDTO> zalaczniki) {
+    public Typ getRodzajZgloszenia() {
+        return rodzajZgloszenia;
+    }
+
+    public void setRodzajZgloszenia(Typ rodzajZgloszenia) {
+        this.rodzajZgloszenia = rodzajZgloszenia;
+    }
+
+    public ZgloszeniaDTO(int id, String opis,Typ rodzajZgloszenia, ProjektyDTO projekt, TypZgloszenia typz, List<HistoriaDTO> historia, List<ZalacznikiDTO> zalaczniki) {
       super(id);
+        this.typ=typz;
+        this.rodzajZgloszenia=rodzajZgloszenia;
         this.opis=opis;
-        this.priorytet=prio;
+        this.historia=historia;
         this.projekt=projekt;
         this.zalaczniki=zalaczniki;
     }

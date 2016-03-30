@@ -8,8 +8,7 @@ import java.util.Date;
 /**
  * Created by Bartek on 2016-03-16.
  */
-public class IDDTO
-{
+public class IDDTO {
     private int id;
     private Date dataUtworzenia;
     private Date dataModyfikacji;
@@ -22,9 +21,8 @@ public class IDDTO
         this.id = id;
     }
 
-    public IDDTO(int i)
-    {
-        this.id=i;
+    public IDDTO(int i) {
+        this.id = i;
 
     }
 }

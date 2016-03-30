@@ -1,6 +1,10 @@
 package DTO;
 
+import org.apache.catalina.User;
+import org.omg.CORBA.ULongSeqHelper;
+
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Bartek on 2016-03-17.
@@ -8,12 +12,12 @@ import java.util.Date;
 public class HistoriaDTO extends IDDTO{
 
     private TypZgloszenia typ;
+    private UserDTO uzytkownik;
     private ZgloszeniaDTO idZgloszenia;
     private UserDTO idUser;
     private String opis;
     private Date data;
-    private ZgloszenieWewDTO zgloszenieWew;
-
+    private List<ZalacznikiDTO> zalaczniki;
 
     public TypZgloszenia getTyp() {
         return typ;
@@ -55,22 +59,16 @@ public class HistoriaDTO extends IDDTO{
         this.data = data;
     }
 
-    public ZgloszenieWewDTO getZgloszenieWew() {
-        return zgloszenieWew;
-    }
 
-    public void setZgloszenieWew(ZgloszenieWewDTO zgloszenieWew) {
-        this.zgloszenieWew = zgloszenieWew;
-    }
 
-    public HistoriaDTO(int id, TypZgloszenia typ, ZgloszeniaDTO zglo, UserDTO idU, String opis, Date data, ZgloszenieWewDTO zgloszenie){
+    public HistoriaDTO(int id, TypZgloszenia typ, ZgloszeniaDTO zglo, UserDTO idU, String opis, Date data){
         super(id);
         this.idZgloszenia=zglo;
         this.typ=typ;
         this.idUser=idU;
         this.opis=opis;
         this.data=data;
-        this.zgloszenieWew=zgloszenie;
+
 
     }
 }
